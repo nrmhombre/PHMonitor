@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0e17;
+  --foreground: #e8eaed;
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --primary-dark: #1d4ed8;
+  --secondary: #0a0e17;
+  --secondary-light: #151b26;
+  --secondary-lighter: #1c2431;
+  --accent-maritime: #06b6d4;
+  --accent-insurgency: #f43f5e;
+  --accent-airspace: #f59e0b;
+  --accent-diplomatic: #a855f7;
+  --status-confirmed: #10b981;
+  --status-reported: #f59e0b;
+  --status-unverified: #6b7280;
+  --text-muted: #9ca3af;
+  --text-dim: #6b7280;
+  --border: #1e293b;
+  --border-light: #334155;
+  --card-bg: #111827;
+  --card-border: #1f2937;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* World Monitor inspired styling */
+.monitor-header {
+  background: linear-gradient(180deg, #0f1419 0%, #0a0e17 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.monitor-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+
+.monitor-stat {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(6, 182, 212, 0.05) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* Map marker animations */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.marker-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+/* Leaflet overrides for dark theme */
+.leaflet-container {
+  background-color: #0a0e17 !important;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #151b26 !important;
+  color: #e8eaed !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid #1e293b;
+}
+
+.leaflet-popup-tip {
+  background-color: #151b26 !important;
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px !important;
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+.leaflet-popup-close-button {
+  color: #9ca3af !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #e8eaed !important;
+}
+
+.leaflet-control-zoom a {
+  background-color: #151b26 !important;
+  color: #e8eaed !important;
+  border-color: #1e293b !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background-color: #1c2431 !important;
+  color: #3b82f6 !important;
+}
+
+.leaflet-control-attribution {
+  background-color: rgba(10, 14, 23, 0.9) !important;
+  color: #6b7280 !important;
+  font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #3b82f6 !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-light);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Timeline connector */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, #1e293b 0%, transparent 100%);
+}
+
+/* Loading shimmer */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #151b26 25%, #1c2431 50%, #151b26 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}

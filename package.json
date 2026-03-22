@@ -1,0 +1,44 @@
+{
+  "name": "phmonitor",
+  "version": "1.0.0",
+  "description": "PH Defense Monitor - A public-facing situational awareness dashboard for the Philippines",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nrmhombre/PHMonitor.git"
+  },
+  "keywords": [
+    "philippines",
+    "defense",
+    "monitor",
+    "dashboard",
+    "osint"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nrmhombre/PHMonitor/issues"
+  },
+  "homepage": "https://github.com/nrmhombre/PHMonitor#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.24",
+    "leaflet": "^1.9.4",
+    "next": "^16.2.1",
+    "postcss": "^8.5.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-leaflet": "^5.0.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}
